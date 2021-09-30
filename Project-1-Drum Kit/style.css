@@ -1,0 +1,43 @@
+*{margin:0;padding:0;box-sizing: border-box;}
+body{
+    /* background-color: rgb(70, 69, 69); */
+    background: url('img/cherry-852.png');
+    background-repeat: no-repeat;
+}
+.keys{ 
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 20px;
+    width:80%;
+    margin: 0 auto;
+}
+.key{
+    border:5px solid rgb(31, 32, 31);
+    display: inline-block;
+    width:50%;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    text-align: center;
+    margin: 15px;
+    transition: all 0.01s;
+}
+.playing{
+    border-radius: 5px solid #000;
+    background: pink;
+    transform:scale(1.5);
+}
+kbd{
+    display: block;
+    color:rgb(29, 27, 27);
+    font-weight: bold;
+    font-size: 30px;
+}
+.key:hover{
+    background: chartreuse;
+    transition: all 0.3s ease-out;
+}
