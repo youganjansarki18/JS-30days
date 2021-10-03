@@ -1,0 +1,45 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+:root{
+    --base: #ffc600;
+    --spacing: 10px;
+    --blur: 10px;
+}
+img{
+    padding: var(--spacing);
+    background: var(--base);
+    filter: blur(var(--blur));
+    
+    width:500px;
+    height:500px;
+    margin-top: 50px;
+}
+/* other CSS Style */
+body{
+    background: rgb(3, 31, 83);
+    color: white; 
+    text-align: center;
+    padding: 3rem;
+}
+.h1{
+   color:var(--base);
+}
+h2{
+   font-size: 70px;
+   font-weight: bold;
+   text-decoration: underline;
+}
+.controls{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px; 
+    margin-top: 20px;
+}
+.bg-color{
+    font-size: 30px;
+    margin-top: 20px;
+}
