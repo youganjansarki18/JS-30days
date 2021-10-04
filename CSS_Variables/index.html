@@ -12,19 +12,22 @@
     <div class="controls">
 
         <label for="spacing">Spacing:</label>
-        <input type="range" class="spacing" min="10" max:"200" value="10" data-sizing="px">
-
+        <input id="spacing" type="range" name="spacing" min="10" max="200" value="10" data-sizing="px">
+    
         <label for="blur">Blur:</label>
-        <input type="range" class="blur" min="10" max="25" value="10" data-sizing="px">
+        <input id="blur" type="range" name="blur" min="0" max="25" value="10" data-sizing="px">
 
     </div>
     <div class="bg-color">
-      <p>Background-Color:</p>
-      <!-- <input type="text" class="bg" value="#ffc600"> -->
-      <button class="bg" value="#ffc600"></button>
-   </div>
+      <p>Background-Color: </p>
+      <h3 class="name_bg"></h3>
+    </div>
+    <button id="bg" >Colour-Change</button>
     <div class="img_container">
         <img src="bg.jpg" alt="" class="image">
     </div>
+
+    <script src="main.js"></script>
+
 </body>
 </html>

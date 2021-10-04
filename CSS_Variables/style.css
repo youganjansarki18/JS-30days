@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 :root{
-    --base: #ffc600;
+    --base: #d3a604;
     --spacing: 10px;
     --blur: 10px;
 }
@@ -12,10 +12,29 @@ img{
     padding: var(--spacing);
     background: var(--base);
     filter: blur(var(--blur));
-    
+
     width:500px;
     height:500px;
     margin-top: 50px;
+    border-radius:8px;
+}
+/* Background color changer */
+.bg-color{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+.name_bg{
+    margin-left:1rem;
+}
+#bg{
+    background-color:var(--base);
+    padding: 0.3rem 1rem;
+    cursor: pointer;
+    color:rgb(19, 17, 17);
+    font-weight: bold;
+    border-radius: 8px;
 }
 /* other CSS Style */
 body{
