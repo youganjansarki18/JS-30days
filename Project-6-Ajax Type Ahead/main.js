@@ -16,6 +16,9 @@ function display_matches(){
     const matched_data= check(this.value, cities);
     console.log(matched_data);
     const html= matched_data.map(place=>{
+        const regex1= new RegExp(this.value, 'gi');
+        const cityName = place.city.replace(regex1, `<span class="hl">${this.value}</span>`);
+        const stateName = place.state.replace(regex1, `<span class="hl">${this.value}</span>`);
         return `
           <li>
               <span class="name">${place.city},${place.state}</span>
