@@ -4,19 +4,20 @@
     box-sizing: border-box;
 }
 body{
-    background-color:burlywood;
+    background: #b92b27;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #1565C0, #b92b27);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #1565C0, #b92b27); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 .container{
     font-family: 'Courier New', Courier, monospace;
-    font-weight: bold; 
     height: 100%;
     width: 100%;
 }
 .child{
+    font-weight: bold; 
     justify-content: center;
     text-align: center;
     align-items: center;
-    border: 20px solid black;
     padding:20rem;
     height: 50%;
 }
