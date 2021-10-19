@@ -8,7 +8,15 @@ body{
 }
 .container{
     font-family: 'Courier New', Courier, monospace;
-    font-weight: bold;
+    font-weight: bold; 
+    height: 100%;
+    width: 100%;
+}
+.child{
+    justify-content: center;
     text-align: center;
-    justify-content:center;
+    align-items: center;
+    border: 20px solid black;
+    padding:20rem;
+    height: 50%;
 }
