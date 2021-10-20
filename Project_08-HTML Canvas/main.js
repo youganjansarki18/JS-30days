@@ -3,7 +3,30 @@ const ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-ctx.strokeStyle = '#BADA55';
+//Input section
+let color= document.querySelector('#color');
+function change_color(){
+    console.log('hi');
+    let colored='#';
+    let random=Math.random().toString(16).slice(2,8);
+    colored+=random;
+    console.log(colored);
+    ctx.strokeStyle = colored;
+    isbeautiful=false;
+    //Change the heading and button color
+    document.querySelector('.heading').style.color=colored;
+}
+
+color.addEventListener('click',change_color);
+
+//Changing colors section
+let beautiful=document.querySelector('#hue');
+let isbeautiful=false;
+beautiful.addEventListener('click',()=> {
+    isbeautiful=true;
+    console.log(isbeautiful);
+});
+
 ctx.lineJoin = 'round';
 ctx.lineCap = 'round';
 ctx.lineWidth=2;
@@ -18,25 +41,29 @@ function draw(e){
     if(!isdrawing)
        return;// Stops the function when they are not moused down
     // console.log(e);
-    ctx.strokeStyle=`hsl(${hue},100%,50%)`;//Hue,saturation,lightness
+    if(isbeautiful){
+       ctx.strokeStyle = '#BADA55';
+       ctx.strokeStyle=`hsl(${hue},100%,50%)`;//Hue,saturation,lightness
+       //Change the heading and button color
+       document.querySelector('.heading').style.color=ctx.strokeStyle;
+    }
     ctx.beginPath();
     ctx.moveTo(lastX,lastY);
     ctx.lineTo(e.offsetX, e.offsetY);
     ctx.stroke();
     lastX=e.offsetX;
     lastY=e.offsetY;
-    hue++;
-    if(hue>360){
+     hue++;
+     if(hue>360){
         hue=0;
-    }
-    if(ctx.lineWidth>50 || ctx.lineWidth <=1){
+     }
+     if(ctx.lineWidth>50 || ctx.lineWidth <=1){
         width_direction=!width_direction;
-    }
-    if(width_direction)
+     }
+     if(width_direction)
        ctx.lineWidth++;
-    else
+     else
        ctx.lineWidth--;
-   
 }
 //Adding mousedown event before mousemove ,inorder to update the lastX,lastY. So, that drawing starts from the place where it is clicked first instead of 0,0;
 document.addEventListener('mousedown',(e) => {
