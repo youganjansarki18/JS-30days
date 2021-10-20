@@ -17,7 +17,7 @@ html, body {
     text-decoration: underline;
     color:#000;
 }
-#color,#hue{
+#color,#hue,#clear{
     justify-content: center;
     border: 2px solid black;
     align-items: center;
@@ -29,9 +29,18 @@ html, body {
     margin-top:1rem;
     cursor:pointer;
 }
+#clear{
+    padding:0.3rem 2.5rem ;
+    justify-content: center;
+    align-items:center;
+
+}
 #color:hover{
     background-color: rgb(52, 230, 243);
 }
 #hue:hover{
+    background-color: rgb(52, 230, 243);
+}
+#clear:hover{
     background-color: rgb(52, 230, 243);
 }

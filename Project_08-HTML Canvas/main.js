@@ -26,7 +26,11 @@ beautiful.addEventListener('click',()=> {
     isbeautiful=true;
     console.log(isbeautiful);
 });
-
+//clearing
+const clear=document.querySelector('#clear');
+clear.addEventListener('click',()=>{
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+});
 ctx.lineJoin = 'round';
 ctx.lineCap = 'round';
 ctx.lineWidth=2;
