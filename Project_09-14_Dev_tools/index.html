@@ -1,50 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>14 Must known Dev Tools</title>
+    <title>14 Must known Devloper tools Technique</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <p onClick="makeGreen()">×BREAK×DOWN×</p>
-    <script src="main.js">
-        const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
-
-        function makeGreen() {
-            const p = document.querySelector('p');
-            p.style.color = '#BADA55';
-            p.style.fontSize = '50px';
-        }
-
-// Regular
-
-// Interpolated
-
-// Styled
-
-// warning!
-
-// Error :|
-
-// Info
-
-// Testing
-
-// clearing
-
-// Viewing DOM Elements
-
-// Grouping together
-
-// counting
-
-// timing
-
-    </script>
+    <button id="click" onclick="makegreen()">Breakdown</p>
 </body>
 
+<script>
+    const dogs=[{name:'Youganjan Sarki',age:20},{name: 'Devanshu',age:19}];
+    var first=true;
+    //For atttribute modification
+    function makegreen(){
+       if(first==true){
+       //console.log("clicked");
+       const p=document.querySelector("#click");
+       p.style.color="violet";
+       p.style.fontSize="50px";
+       first=false;
+      }
+      else{
+        //console.log("second click");
+        const p=document.querySelector("#click");
+        p.style.color="black";
+        p.style.fontSize="20px";
+        first=true;
+      }
+    }
+
+    //Regular
+    console.log("hello");
+
+    //interpolated
+    console.log("Hello I am %s string",'Youganjan =>');  //Can be used like C language
+
+    //styled
+    console.log(" I am a %c great text",'font-size:50px;background:red;'); //After %c everything gets the property which is set to it.
+
+    //==>Warning,Error, Testing ,info . They all sets the icons in the console
+    //warning!
+    console.warn("hello!!!");
+
+    //Error
+    console.error('Oh NOOO');
+
+    //info
+    console.info('Hi I am the ');
+
+    //testing
+    const p=document.querySelector('p');
+    console.assert(p.classList.contains('ouch'),'That is wrong!');
+
+   //Clearing
+   console.clear();
+
+   //Grouping Together
+   //Very useful inorder to group something in the console
+   dogs.forEach(dog=>{
+       //console.group(`${dog.name}`); // Doesn't set everything together
+       console.groupCollapsed(`${dog.name}`); // Sets everything together
+       console.log(`This is ${dog.name}`);
+       console.log(`My age is ${dog.age}`);
+       console.groupEnd(`${dog.name}`);
+   })
+
+   //Count  // Use for counting
+   console.count('HI');
+   console.count('HI');
+</script>
 </html>
