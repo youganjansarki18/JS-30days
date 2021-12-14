@@ -1,0 +1,38 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    background-color: yellow;
+}
+.container-checkbox{
+    max-width: 350px;
+    border: 2px solid black;
+    border-radius: 15px;
+    background-color: whitesmoke;
+    margin:100px auto;
+    box-shadow: 10px 10px 0 rgba(0,0,0,0.1);
+}
+input[type="checkbox"] {
+    margin: 10px;
+}
+input:checked + p {
+    background: #F9F9F9;
+    text-decoration: line-through;
+}
+.item:last-child {
+    border-bottom: 0;
+}
+.items{
+    display: flex; 
+    align-items: center;
+    margin:5px 5px;
+    padding:2% 2%;
+    border-bottom: 1px solid #776f6f;
+}
+.items:hover{
+    color:rgb(8, 51, 168);
+    cursor: pointer;
+}
