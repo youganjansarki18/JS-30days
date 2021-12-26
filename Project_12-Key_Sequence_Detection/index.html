@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KEY SEQUENCE DETECTION</title>
+    <script type="text/javascript" src="https://www.cornify.com/js/cornify.js"></script>
+</head>
+<body>
+</body>
+<script>
+    const press=[];
+    const secret_code='wesbos'
+    window.addEventListener('keyup',(e) =>{
+      //console.log(e.key);
+      press.push(e.key);
+      console.log(press);
+      press.splice(-secret_code.length-1,press.length-secret_code.length);
+      //"-" present before sec_code trims the ele. from the front instead of backward
+      if(press.join('').includes(secret_code)){
+        console.log("Yeah");
+        cornify_add();
+      }
+      console.log(press);
+    });
+</script>
+</html>

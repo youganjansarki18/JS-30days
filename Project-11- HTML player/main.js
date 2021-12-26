@@ -64,3 +64,15 @@ progress.addEventListener('mousemove',(e)=>mousedown && scrub(e));
 progress.addEventListener('mousedown',()=>mousedown=true);
 progress.addEventListener('mouseup',()=>mousedown=false);
 
+//For fullscreen()
+var elem=document.getElementsByClassName(".viewer");
+function Fullscreen(){
+    console.log("Full screen");
+    if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+      } else if (elem.webkitRequestFullscreen) { /* Safari */
+        elem.webkitRequestFullscreen();
+      } else if (elem.msRequestFullscreen) { /* IE11 */
+        elem.msRequestFullscreen();
+      }
+}
