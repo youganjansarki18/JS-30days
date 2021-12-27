@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects and Arrays</title>
+</head>
+<body>
+    
+</body>
+  <script>
+      let name="Youganjan";
+      let name1=name;
+      console.log(name,name1); //Youganjan Youganjan
+      name1="Sarki";
+      console.log(name,name1); //Youganjan Sarki
+
+       // Let's say we have an array
+      const players = ['Wes', 'Sarah', 'Ryan', 'Poppy'];
+
+      // and we want to make a copy of it.
+      const team = players;
+       // or create a new array and concat the old one in
+      const team3 = [].concat(players);
+      console.log(team3);
+
+      // or use the new ES6 Spread
+      const team4 = [...players];
+      team4[3] = 'heeee hawww';
+      console.log(team4);
+
+
+      //  For strings, numbers and boolean , if we change the value then, it won't change coz the orginal ones doesn't get refreneced
+      //  But, in the case of arrays and objects it diff. Let's see what it is
+      // ---------------------------------------
+
+      let arr=[1,2,3,4];
+      let arr1=arr;
+      console.log(arr,arr1); //[1,2,3,4][1,2,3,4];
+      arr1[2]=15;
+      console.log(" In the case of array the orginal will also get changed coz the array that made later will get refrenced to the orginal ones . So, everything will get changed;")
+      console.log(arr,arr1);// [1,2,15,4][1,2,15,4]
+
+      //So. inorder to prevent it . We use Array.slice() function to copy the orginal array to a new one, then we can change/ modify it as per our will
+      let arr2=arr.slice();
+      console.log(arr,arr2); //[1,2,3,4][1,2,3,4]
+      arr[2]=100;
+      console.log("The orginal array won't get changed "); 
+      console.log(arr,arr2); //[1, 2, 100, 4] [1, 2, 3, 4] .
+
+      console.log("Same happens with the class too");
+      let student={
+        name:"Youganjan",
+        age:20
+      };
+      console.log(student.age);
+      let student1=student;
+      console.log(student1.name, student1.age);
+      console.log("Nothing got changed, but now we are changing it");
+      student1.age=12;
+      console.log("We see that the orginal method inside the object also got changed");
+      console.log(student1.age, student.age);
+      console.log("For solving it we use object.assign() property to copy and change whatever we need to change");
+      let student_01=Object.assign({},student,{age:55});
+      console.log(student_01,student);
+
+
+      const stu={
+        name:"Youganjan",
+        age:20,
+        social:{
+          twitter: '@wesbos',
+          facebook: 'wesbos.developer'
+        }
+      };
+      console.clear();
+      console.log(stu);
+
+      let stu1=Object.assign({},stu);
+      console.log("New object stu1");
+      console.log(stu1);
+      stu1.social.twitter='@web';
+      console.log(stu1); 
+      //You can't change it coz assign works only till 1 level deep 
+
+      const stu2 = JSON.parse(JSON.stringify(stu));  //stringfy changes everything to string and JSON. parse converts everything to objects.
+      
+  </script>
+</html>
